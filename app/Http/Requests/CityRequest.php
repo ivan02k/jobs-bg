@@ -31,7 +31,7 @@ class CityRequest extends FormRequest
     public function  messages()
     {
        $rules = [
-           'name.required' => 'City name is required',
+           'name.required' => 'name is required',
        ];
 
        return $rules;

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PositionRequest;
 use App\Models\Position;
-use Illuminate\Http\Request;
 
-class PositionController extends Controller
+class PositionsController extends Controller
 {
     public function index(){
         $positions = Position::all();
@@ -34,7 +34,7 @@ class PositionController extends Controller
         if ($position){
             $position->update($data);
         }
-        return redirect()->action([PositionController::class, 'index']);
+        return redirect()->action([PositionsController::class, 'index']);
     }
 
     public function delete($id){

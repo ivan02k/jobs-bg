@@ -13,7 +13,7 @@ class PositionRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     public function rules()
@@ -26,7 +26,7 @@ class PositionRequest extends FormRequest
     public function  messages()
     {
         $rules = [
-            'name.required' => 'Position name is required',
+            'name.required' => 'name is required',
         ];
 
         return $rules;
