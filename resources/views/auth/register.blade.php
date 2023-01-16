@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    @if(\Illuminate\Support\Facades\Auth::user())
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -74,4 +75,10 @@
         </div>
     </div>
 </div>
+    @else
+        <h1 style="text-align:center">Locked</h1>
+        <div style="text-align:center">
+            <a  href="{{route('jobs.index')}}" class="btn btn-danger">Go home</a>
+        </div>
+    @endif
 @endsection

@@ -2,9 +2,9 @@
 @section('content')
     @if(\Illuminate\Support\Facades\Auth::user())
     <div class="container">
-        <h1 class="text-center mt-3">{{__('Positions')}}</h1>
+        <h1 class="text-center mt-3">{{__('Companies')}}</h1>
         <div class="mb-3 mt-3 text-right">
-            <a href="{{route('positions.create')}}"
+            <a href="{{route('companies.create')}}"
                class="btn btn-primary float-end">{{__('Create new')}}
             </a>
         </div>
@@ -13,19 +13,23 @@
                 <thead>
                 <th>{{__('ID')}}</th>
                 <th>{{__('Name')}}</th>
+                <th>{{__('City')}}</th>
+                <th>{{__('Adress')}}</th>
                 <th>{{__('Actions')}}</th>
                 </thead>
                 <tbody>
-                @foreach($positions as $position)
+                @foreach($companies as $company)
                     <tr>
-                        <td>{{( $position->id)}}</td>
-                        <td>{{( $position->name)}}</td>
+                        <td>{{( $company->id)}}</td>
+                        <td>{{( $company->name)}}</td>
+                        <td>{{( $company->city->name)}}</td>
+                        <td>{{( $company->adress)}}</td>
                         <td>
                             <div class="d-flex">
                                 <div class="edit mx-2">
-                                    <a href="{{route('cities.edit', $position->id)}}" class="btn btn-primary">{{__('Edit')}}</a>
+                                    <a href="{{route('companies.edit', $company->id)}}" class="btn btn-primary">{{__('Edit')}}</a>
                                 </div>
-                                <form  method="post" action="{{route('positions.delete', $position->id)}}" class="d-inline">
+                                <form  method="post" action="{{route('companies.delete', $company->id)}}" class="d-inline">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger"
