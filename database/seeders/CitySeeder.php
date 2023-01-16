@@ -21,11 +21,27 @@ class CitySeeder extends Seeder
         ]);
 
         City::create([
-            'name' => 'Trqvna',
+            'name' => 'Sofia',
         ]);
 
         City::create([
-            'name' => 'Sofia',
+            'name' => 'Plovdiv',
+        ]);
+
+        City::create([
+            'name' => 'Stara Zagora',
+        ]);
+
+        City::create([
+            'name' => 'Gabrovo',
+        ]);
+
+        City::create([
+            'name' => 'Varna',
+        ]);
+
+        City::create([
+            'name' => 'Burgass',
         ]);
     }
 }
